@@ -1,0 +1,48 @@
+#sidebar a:hover {
+  text-decoration:underline;
+}
+#sidebar .widget {
+  margin-bottom:20px;
+  font-size:14px;
+}
+#sidebar ul{
+  list-style:disc inside;
+}
+#sidebar li {
+  margin:5px 0;
+}
+#sidebar h2, .widget h2 {
+  font-size:14px;
+  font-weight:bold;
+  padding:10px 0;
+  color:#000;
+  border-bottom:1px solid #CCC;
+}
+
+.widget_search {
+  position:relative;
+}
+.widget_search .wrap {
+  border-radius:2px;
+  border:1px solid #CCC;
+  background:#FFF;
+}
+.widget_search .field {
+  border:0 none;
+  padding:5px 0 5px 5px;
+  height: 18px;
+  width: 200px;
+  line-height:16px;
+}
+.widget_search .submit {
+  width:28px;  height:28px;
+  line-height:90px; overflow:hidden;  font-size:0;
+  position:absolute;
+  top:1px;  right:1px;
+  cursor:pointer;
+  background:url(../img/bg_s.png) no-repeat;
+  border:0 none;
+}
+.widget_search label {
+  display:none;
+}

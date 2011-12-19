@@ -1,0 +1,159 @@
+/*
+Theme Name: Studio12f 
+Description: This theme is customized for the studio12f workhouse. &More 
+Author: Ye Xianjin & Zhang Xing 
+Version: 0.1
+Tags: 
+*/
+
+
+/* Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html */
+
+@import url(_/css/jquery.fancybox.css);
+@import url(_/css/style.css);
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+body {
+  line-height: 1;
+}
+h1, h2, h3, h4, h5, h6 {
+  clear: both;
+  font-weight: normal;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote {
+  quotes: none;
+}
+blockquote:before, blockquote:after {
+  content: '';
+  content: none;
+}
+del {
+  text-decoration: line-through;
+}
+/* tables still need 'cellspacing="0"' in the markup */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+a img {
+  border: none;
+}
+
+
+/* htext */
+#htext {
+        border:10px solid #e7e7e7;
+        margin:0 180px
+}
+#container{
+    postion:relative;
+}
+#leftside {
+    position:absolute;
+    left:180px;
+    height:90%;
+}
+
+#rightside {
+     position:absolute;
+     left:350px;
+     height:90%;
+     width:60%;
+
+}
+
+#leftside .item {
+    position:absolute;
+    top:90%;
+    width:40px;
+}
+
+.project,.item {
+    float:left;
+    margin:auto;
+
+}
+
+/*----------------------------
+  Green filter bar
+-----------------------------*/
+
+
+#filter {
+  display: block;
+  margin: auto;
+  position: relative;
+  text-align:center;
+    float: left;
+  
+}
+
+
+#filter a{
+  color: #FFFFFF;
+  display: inline-block;
+  padding: 0 15px;
+  text-shadow:1px 1px 1px #315218;
+}
+
+#filter a:hover{
+  text-decoration:none;
+}
+
+#filter a.active{
+  box-shadow: 1px 0 0 rgba(255, 255, 255, 0.2),
+        -1px 0 0 rgba(255, 255, 255, 0.2),
+        1px 0 1px rgba(0,0,0,0.2) inset,
+        -1px 0 1px rgba(0,0,0,0.2) inset;
+}
+
+
+/*----------------------------
+  Content area
+-----------------------------*/
+
+
+#imagebox{
+  display:block;
+    position:relative;
+  /*overflow:hidden;*/
+  margin: auto;
+    height: 90%;
+}
+.vesibilityclass{
+    opacity:1;
+}
+
+.unvesibilityclass{
+    opacity:0;
+}
+
+#imagebox li{
+
+    /*float: left;*/
+  list-style: none outside none;
+  margin: 6px;
+  position: relative;
+  
+}
+
+#imagebox ul.hidden{
+  display:none;
+}
