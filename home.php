@@ -78,8 +78,8 @@
 
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.easing.1.3.js" ></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.localzoom.js" ></script>
-<!--
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>
+<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery-ui.min.js"></script>
+<link    href="<?php bloginfo('template_directory');?>/_/css/jquery-ui.css"  rel="stylesheet" type="text/css"/>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.x.js" ></script>
--->
 <?php get_footer(); ?>
