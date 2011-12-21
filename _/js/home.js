@@ -185,10 +185,10 @@ $(document).ready(function()
 			// and adding it to the list:
 	    var element = $(this);
 	    if(index>3){
-	        element.css({'position':'absolute','bottom':12+(index-4)*102,'left':j*132+66;});
+	        element.css({'position':'absolute','bottom':12+(index-4)*102,'left':j*132+66});
 	    }
             else{
-            element.css({'position':'absolute','bottom':12+index*102,'left':j*132});
+                element.css({'position':'absolute','bottom':12+index*102,'left':j*132});
             }
             if(k==0){
                 //element.removeClass("vesibilityclass").addClass("unvesibilityclass");
