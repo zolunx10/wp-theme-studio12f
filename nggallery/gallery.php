@@ -33,11 +33,11 @@ Follow variables are useable :
 		</a>
 	</div>
 <?php } ?>
-	
+	<?php print_r($images[0]) ?>
 	<!-- Thumbnails -->
 	<?php foreach ( $images as $image ) : ?>
 	
-	<div id="ngg-image-<?php echo $image->pid ?>" class="ngg-gallery-thumbnail-box" <?php echo $image->style ?> >
+	<div id="ngg-image-<?php echo $image->pid ?>" class="ngg-gallery-thumbnail-box" <?php echo $image->style ?> class="highslide" onclick="return hs.expand(this, { slideshowGroup: %GALLERY_NAME% })" >
 		<div class="ngg-gallery-thumbnail" >
 			<a href="<?php echo $image->imageURL ?>" title="<?php echo $image->description ?>" <?php echo $image->thumbcode ?> >
 				<?php if ( !$image->hidden ) { ?>

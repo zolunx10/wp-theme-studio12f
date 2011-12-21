@@ -1,7 +1,7 @@
 <?php
 // http://199.19.226.150/wordpress
 ?>
-<?php get_header(); ?>
+<?php get_header('public'); ?>
 <?php 
   query_posts(array(
     'posts_per_page'=>10
@@ -23,7 +23,7 @@
 </script>
 
 <section id="imagebox">
-    <?php echo nggShowAlbum(1, 'extend'); ?>
+    <?php echo nggShowAlbum(1, 'home'); ?>
 </section>
   
 <nav id="filter"></nav>
@@ -45,7 +45,7 @@
       </a>
     </div>
     <div class="item page_item entry-title">
-      <a href="#">本科生作品<br/>
+      <a href="<?php echo bloginfo('url') ?>/work">本科生作品<br/>
           <span class="name">UNDERGRADE<br/> STUDENTS' WORKS</span>
       </a>
     </div>
@@ -78,6 +78,8 @@
 
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.easing.1.3.js" ></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.localzoom.js" ></script>
+<!--
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.x.js" ></script>
+-->
 <?php get_footer(); ?>

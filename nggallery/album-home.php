@@ -18,12 +18,15 @@ Follow variables are useable :
 	<!-- List of galleries -->
 	<ul id="stage">
 	<?php foreach ($galleries as $gallery) : ?>
-	
 		<li data-tags="Time, Type, <?php echo $gallery->galdesc; ?>">
-      <img src="<?php echo $gallery->previewurl ?>" alt="<?php echo $gallery->title ?>" />
+			<div class="ngg-gallery-thumbnail" >
+				<a href="http://localhost/wordpress/wp-content/gallery/project01/03_01.jpg" class="shutterset_<?php echo $gallery->name ?>' })" >
+	      <img src="<?php echo $gallery->previewurl ?>" alt="<?php echo $gallery->title ?>" />
+				</a>
+			</div>
 		</li>
 
-		<?php for ($i=0; $i<3; $i++) { //测试用多打几个 ?>
+		<?php for ($i=0; $i<0; $i++) { //测试用多打几个 ?>
 		<li data-tags="Time, Type, <?php echo $gallery->galdesc; ?>">
       <img src="<?php echo $gallery->previewurl ?>" alt="<?php echo $gallery->title ?>" />
 		</li>
