@@ -1,7 +1,7 @@
 <?php
 // http://199.19.226.150/wordpress
 ?>
-<?php get_header(); ?>
+<?php get_header('public'); ?>
 <?php 
   query_posts(array(
     'posts_per_page'=>10
@@ -45,7 +45,7 @@
       </a>
     </div>
     <div class="item page_item entry-title">
-      <a href="#">本科生作品<br/>
+      <a href="<?php echo bloginfo('url') ?>/work">本科生作品<br/>
           <span class="name">UNDERGRADE<br/> STUDENTS' WORKS</span>
       </a>
     </div>

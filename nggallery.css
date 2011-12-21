@@ -13,8 +13,8 @@ it's only a template design
 /* ----------- Album Styles Extend -------------*/
 
 .ngg-albumoverview {
-	margin-top: 10px;
-	width: 100%;
+	margin: 10px auto 0 auto;
+	width: 700px;
 	clear:both; 
 	display:block !important;
 }
@@ -26,20 +26,10 @@ it's only a template design
     border: 1px solid #fff;
 }
 
-/* IE6 will ignore this , again I hate IE6 */
-/* See also http://www.sitepoint.com/article/browser-specific-css-hacks */
-html>body .ngg-album {
-    overflow:hidden;
-    padding: 5px;
-    margin-bottom: 5px;
-    border: 1px solid #cccccc;
-} 
-
 .ngg-album {
 	overflow: hidden;
 	padding: 5px;
-	margin-bottom: 5px;
-	border: 1px solid #cccccc;
+	margin-bottom: 15px;
 }
 
 .ngg-albumtitle {
@@ -52,8 +42,12 @@ html>body .ngg-album {
 }
 
 .ngg-thumbnail {
-	float: left;
-	margin-right: 12px;
+	max-width:180px;
+	float:right;
+}
+.ngg-albumcontent .wrap {
+	max-width:500px;
+	float:left;
 }
 
 .ngg-thumbnail img {
