@@ -63,13 +63,14 @@
   <meta name="google-site-verification" content="">
   <!-- Speaking of Google, don't forget to set your site up: http://google.com/webmasters -->
   
-  <meta name="author" content="Your Name Here">
-  <meta name="Copyright" content="Copyright Your Name Here 2011. All Rights Reserved.">
+  <meta name="author" content="Studio 12F">
+  <meta name="Copyright" content="Copyright Studio 12F 2011. All Rights Reserved.">
+  <meta name="keywords" content="Studio 12F,建筑,贺勇">
 
   <!-- Dublin Core Metadata : http://dublincore.org/ -->
   <meta name="DC.title" content="Project Name">
   <meta name="DC.subject" content="What you're about.">
-  <meta name="DC.creator" content="Who made this site.">
+  <meta name="DC.creator" content="zolunX10, dream, advancedXY">
   
   <!--  Mobile Viewport meta tag
   j.mp/mobileviewport & davidbcalhoun.com/2010/viewport-metatag 
@@ -96,6 +97,17 @@
 
   <!-- CSS: screen, mobile & print are all in the same file -->
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+  <?php 
+      $name= get_query_var('name');
+    if (!$name) {
+      $name= get_query_var('category_name'); 
+    }
+    if ($name=="blog") {
+  ?>
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/_/css/<?php echo $name ?>.css">
+  <?php 
+    }
+  ?>
   
   <!-- all our JS is at the bottom of the page, except for Modernizr. -->
   <script src="<?php bloginfo('template_directory'); ?>/_/js/modernizr-1.7.min.js"></script>

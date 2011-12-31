@@ -23,7 +23,7 @@
 </script>
 
 <section id="imagebox">
-    <?php echo nggShowAlbum(1, 'home'); ?>
+    <?php echo the_post() ?>
 </section>
   
 <nav id="filter"></nav>

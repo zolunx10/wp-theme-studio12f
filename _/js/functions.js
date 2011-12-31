@@ -57,7 +57,19 @@ exports.makeGallery= function(settings) {
 /* trigger when page is ready */
 
 $(document).ready(function(){
-  
+  //左右键翻页
+  if ($('.navigation').length>0) {
+    var aPrev= $('.prev-posts a').attr('href'),
+        aNext= $('.next-posts a').attr('href');
+    $('body').keydown(function(e) {
+      if (aPrev && e.which==37) {  //keyleft
+        //$('.prev-posts a').first().click(); 无法触发跳转
+        window.location.href = aPrev;
+      } else if (aNext && e.which==39) { //keyright
+        window.location.href = aNext;
+      }
+    })
+  };
 });
   
 })(window.jQuery);

@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Page Cated
+Template Name: Blog
 Destription: 左侧显示父级树状图
 */
 ?>

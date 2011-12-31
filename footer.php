@@ -2,7 +2,14 @@
 
 	</div>
 		<footer id="footer" class="source-org vcard copyright">
-			<?php get_footer('public');?>
+      <p>
+        <a href="<?php bloginfo('url'); ?>">首页</a>
+        <span class="sep"> | </span> 
+        <a href="<?php bloginfo('url'); ?>/archives/category/blog">博客</a>
+      </p>
+      <p>
+      <small>&copy; <?php echo date("Y "); bloginfo('name'); ?></small>
+      </p>
 		</footer>
 
 	<?php wp_footer(); ?>

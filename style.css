@@ -85,12 +85,6 @@ a img {
     width:40px;
 }
 
-.project,.item {
-    float:left;
-    margin:auto;
-
-}
-
 /*----------------------------
   Green filter bar
 -----------------------------*/
@@ -130,7 +124,7 @@ a img {
 -----------------------------*/
 
 
-#imagebox{
+.home #imagebox{
   display:block;
     position:relative;
   /*overflow:hidden;*/

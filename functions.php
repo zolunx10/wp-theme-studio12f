@@ -1,4 +1,5 @@
 <?php
+include_once(TEMPLATEPATH.'/_/inc/dBug.php');
         // Translations can be filed in the /languages/ directory
         load_theme_textdomain( 'html5reset', TEMPLATEPATH . '/languages' );
  
@@ -58,7 +59,7 @@
 
     class XWalkerPage extends Walker_Page {
         function start_el(&$output, $page, $depth, $args, $current_page) {
-            $args['link_after']= '<span class="name">'.strtoupper($page->post_name).'</span>'.$args['link_after'];
+            $args['link_after']= ' <span class="name">'.strtoupper($page->post_name).'</span>'.$args['link_after'];
             parent::start_el($output, $page, $depth, $args, $current_page);
         }
     }

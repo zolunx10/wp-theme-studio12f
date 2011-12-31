@@ -1,39 +1,40 @@
-<div id="sidebar" class="col-sub">
-
-    <?php if (function_exists('dynamic_sidebar') && dynamic_sidebar('Sidebar Widgets')) : else : ?>
-    
-        <!-- All this stuff in here only shows up if you DON'T have any widgets active in this zone -->
-
-    	<?php get_search_form(); ?>
-    
-    	<?php wp_list_pages('title_li=<h2>Pages</h2>' ); ?>
-    
-    	<h2>Archives</h2>
-    	<ul>
-    		<?php wp_get_archives('type=monthly'); ?>
-    	</ul>
-        
-        <h2>Categories</h2>
-        <ul>
-    	   <?php wp_list_categories('show_count=1&title_li='); ?>
-        </ul>
-        
-    	<?php wp_list_bookmarks(); ?>
-    
-    	<h2>Meta</h2>
-    	<ul>
-    		<?php wp_register(); ?>
-    		<li><?php wp_loginout(); ?></li>
-    		<li><a href="http://wordpress.org/" title="Powered by WordPress, state-of-the-art semantic personal publishing platform.">WordPress</a></li>
-    		<?php wp_meta(); ?>
-    	</ul>
-    	
-    	<h2>Subscribe</h2>
-    	<ul>
-    		<li><a href="<?php bloginfo('rss2_url'); ?>">Entries (RSS)</a></li>
-    		<li><a href="<?php bloginfo('comments_rss2_url'); ?>">Comments (RSS)</a></li>
-    	</ul>
-	
-	<?php endif; ?>
-
-</div>
+    <nav class="page-nav">
+      <h1 class="entry-title">
+        <?php 
+          $t= get_page_by_path('info'); 
+          if (is_page()) {
+            echo $t->post_title; 
+            echo ' <span class="name">'.strtoupper($t->post_name).'</span>';
+          } else {
+            ?>
+        <h1 class="entry-title">
+          <a href="<?php echo bloginfo('url'); ?>/archives/category/blog">
+            博客 <span class="name">BLOG</span>
+          </a>
+        </h1>
+        <?php } ?>
+      </h1>
+      <ul>      
+        <?php 
+          wp_list_pages(array(
+            'title_li'=>false,
+            'show_home'=>false,
+            'sort_column'=>"menu_order",
+            'hierarchical'=>1,
+            'child_of'=>$t->ID,
+            'walker'=>new XWalkerPage(),
+            'link_before'=>'<h2 class="entry-title">',
+            'link_after'=>'</h2>'
+          ));
+          if (is_page()) {
+            ?>
+        <li class="page_item page-item-<?php ?>">
+          <a href="<?php echo bloginfo('url'); ?>/archives/category/blog">
+            <h2 class="entry-title">
+              博客 <span class="name">BLOG</span>
+            </h2>
+          </a>
+        </li>
+          <?php } ?>
+      </ul>
+    </nav>

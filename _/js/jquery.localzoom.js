@@ -13,11 +13,13 @@
       $viewer.remove();
     }
     $viewer= $('<div id="localzoom-viewer" class="clearfix">').css({
-      'position': "absolute"
-    , 'display': "none"
-    , 'z-index': 100
+        'position': "absolute"
+      , 'display': "none"
+      , 'z-index': 100
     });
-    $viewer.prependTo('body');
+    $viewer.prependTo('body').mouseleave(function(e) {
+      $(this).hide();
+    });
   }
   $.fn.localzoom= function(settings) {
     var opts ={
