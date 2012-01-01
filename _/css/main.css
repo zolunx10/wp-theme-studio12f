@@ -12,7 +12,7 @@ html {
 }
 body {
   height: 100%;
-  color:#333;
+  color:#909090;
 }
 h1, h2 {
   font-size:bold;
@@ -32,13 +32,15 @@ a:hover {
 .post p {
   margin-bottom:5px;
   line-height:1.4em;
+}
+.unused .post p {
   text-indent:2em;
 }
 
 body {
   _text-align:center;
 }
-.page-wrap, #header,  #footer {
+.page-wrap, #header,  #footer, .home-nav {
   position:relative;
   width:960px;
   margin:0 auto;
@@ -74,7 +76,7 @@ body {
 }
 .navigation {
   clear:both;
-  margin:15px auto 20px auto;
+  margin:15px auto 0 auto;
   text-align:right;
 }
 .prev-posts {
@@ -156,6 +158,9 @@ body {
   height:50px;
 }
 
+.home-nav {
+  margin-top:15px;
+}
 /* info
  */
 .archieve .main-wrap {
@@ -214,7 +219,8 @@ li.current_page_item a {
 /* book
 */
 .category-book .post {
-  margin:0 10px 10px 10px;
+  margin-left:10px;
+  margin-right:10px;
 }
 .category-book .post {
   display:inline;
