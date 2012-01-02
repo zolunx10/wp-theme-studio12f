@@ -56,9 +56,14 @@
     $viewer.stop().animate(sc, opts.speed);
     $('img', $el).each(function(){
       var t= {
-        width: Math.round( $(this).width()*opts.ratio)
+          width: Math.round( $(this).width()*opts.ratio)
         , height: Math.round( $(this).height()*opts.ratio )
       };
+      if (t.width==0 || t.height==0) {
+        //TODO
+        t.width=sc.width*0.85;
+        t.height=sc.height*0.85;
+      }
       $(this).animate({
         width: t.width
       , height: t.height
