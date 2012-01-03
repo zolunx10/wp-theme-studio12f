@@ -148,8 +148,8 @@ body {
   }
 
 .home #imagebox {
-  min-height:350px;
-  _height:350px;
+  min-height:400px;
+  _height:400px;
   margin-left:100px;
 }
 #imagebox img {
