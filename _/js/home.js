@@ -1,6 +1,6 @@
 $(document).ready(function()
     {
-        $(".project").hide();
+        //$(".project").hide();
         $("#filter").hide();
         $("#stage").hide();
         var $item = $(".item");
@@ -40,6 +40,16 @@ $(document).ready(function()
 		
 			// Removing extra whitespace:
 			value = $.trim(value);
+			if($.isNumeric(value)){
+				if(value <= 2002)
+					value = 2002;
+				else if(value <= 2004)
+					value = 2004;
+				else if(value <= 2006)
+					value = 2006;
+				else if(value <= 2009)
+					value =2009;
+			}
 			if(!(value in itemsByTags)){
 				// Create an empty array to hold this item:
 				itemsByTags[value] = [];
@@ -60,7 +70,9 @@ $(document).ready(function()
           //$("#imagebox li.type").removeClass("vesibilityclass").addClass("unvesibilityclass");
               
           //$("#imagebox li.time").removeClass("unvesibilityclass").addClass("vesibilityclass");
+
         var preitems=$("#imagebox li.type").clone();  
+	if(!$("#imagebox li").is(":animated")){
         $("#imagebox li.type").each(function(){
             var $ele=$(this);
             $ele.animate({
@@ -91,10 +103,12 @@ $(document).ready(function()
 
         $("#imagebox span.type").removeClass("vesibilityclass").addClass("unvesibilityclass");
         $("#imagebox span.time").removeClass("unvesibilityclass").addClass("vesibilityclass");
+	}
     });
  
     $("#filter a").eq(1).click(function(){
           var preitems=$("#imagebox li.time").clone();
+	  if(!$("#imagebox li").is(":animated")){
           $("#imagebox li.time").each(function(index){
             var $ele=$(this);
             $ele.animate({
@@ -123,7 +137,7 @@ $(document).ready(function()
 
          $("#imagebox span.time").removeClass("vesibilityclass").addClass("unvesibilityclass");
          $("#imagebox span.type").removeClass("unvesibilityclass").addClass("vesibilityclass");
-
+	}
         });
                 
     function createList(text,items){
@@ -136,32 +150,36 @@ $(document).ready(function()
 		var ul = $('<ul>');
         var j,k;//k for the opacity
         switch(text){
-        case('2007'):
-            j=0;
+	case('2002'):
+   	    j=0;
+	    k=1;
+	    break; 				
+        case('2004'):
+            j=1;
             k=1;
             break;
+	case('2006'):
+	    j=2;
+            k=1;
+	    break;
         case('urban'):
             j=0;
             k=0;
             break;
-        case('2008'):
-            j=1;
+        case('2009'):
+            j=3;
             k=1;
             break;
         case('country'):
             j=1;
             k=0;
             break;
-        case('2009'):
-            j=2;
-            k=1;
-            break;
         case('building'):
             j=2;
             k=0;
             break;
         case('2010'):
-            j=3;
+            j=4;
             k=1;
             break;
         case('landscape'):
@@ -169,7 +187,7 @@ $(document).ready(function()
             k=0;
             break;
        case('2011'):
-            j=4;
+            j=5;
             k=1;
             break;
         case('other'):
@@ -184,12 +202,12 @@ $(document).ready(function()
 			// Creating a copy of each li item
 			// and adding it to the list:
 	    var element = $(this);
-	    if(index>3){
-	        element.css({'position':'absolute','bottom':12+(index-4)*102,'left':j*132+66});
-	    }
-            else{
-                element.css({'position':'absolute','bottom':12+index*102,'left':j*132});
-            }
+	   // if(index>4){
+	        element.css({'position':'absolute','bottom':12+(index%5)*72,'left':j*132+66*Math.floor(index/5),'height':'auto'});
+	    //}
+            //else{
+              //  element.css({'position':'absolute','bottom':12+index*72,'left':j*132,'height':'auto'});
+            //}
             if(k==0){
                 //element.removeClass("vesibilityclass").addClass("unvesibilityclass");
                 element.hide();
@@ -206,7 +224,7 @@ $(document).ready(function()
         var tex = $('<span>',{
                 html:text
         });
-        tex.css({'position':'absolute','bottom':'0px','left':j*132});
+        tex.css({'position':'absolute','bottom':'0px','left':j*132+66});
         if(k==0){
             tex.removeClass("vesibilityclass").addClass("unvesibilityclass");
             tex.removeClass("time").addClass("type");
