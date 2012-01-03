@@ -124,13 +124,6 @@ a img {
 -----------------------------*/
 
 
-.home #imagebox{
-  display:block;
-    position:relative;
-  /*overflow:hidden;*/
-  margin: auto;
-    height: 90%;
-}
 .vesibilityclass{
     opacity:1;
 }

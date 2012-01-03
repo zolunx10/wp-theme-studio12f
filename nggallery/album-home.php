@@ -19,7 +19,7 @@ Follow variables are useable :
 	<ul id="stage" class="ngg-albumoverview">
 	<?php foreach ($galleries as $gallery) : ?>
 		<li class="clearfix ngg-album" data-tags="Time,Type, <?php echo $gallery->galdesc; ?>">
-			<div class="ngg-gallery-thumbnail" >
+			<div class="ngg-thumbnail" >
 				<a href="<?php echo $gallery->pagelink; ?>" class="shutterset_<?php echo $gallery->name ?>' }) ngg-link" >
 	      <img src="<?php echo $gallery->previewurl ?>" alt="<?php echo $gallery->title ?>" />
 				</a>

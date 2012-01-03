@@ -8,24 +8,6 @@ $(document).ready(function()
         var $info = $("#info a");
         var imageboxtype = $("#imagebox li.type").clone();
         var imageboxtime = $("#imagebox li.time").clone();
-        $ele.eq(0).click(function()
-            {
-                $info.hide("slide",{direction:"left"},400);
-                $ele.eq(0).clone().appendTo("div#info");
-                $item.hide();
-                $(".project").show("slide",{direction:"left"},400);
-                $("#filter").show("slide",{direction:"left"},400);
-            });
-
-        $("#back a").click(function()
-            {
-                $info.show("slide",{direction:"left"},400);
-                $("#info a").eq(1).remove();
-                $item.show("slide",{direction:"left"},400);
-
-                $(".project").hide(1000,"easeOutBounce");
-                $("#filter").hide(1000,"easeOutBounce");
-            });
 
     var items = $('#stage li'),
 	itemsByTags = {};
@@ -66,7 +48,7 @@ $(document).ready(function()
 		createList(k,v);
        	});
     textbox.appendTo('#imagebox');    
-    $("#filter a").eq(0).click(function(){
+    function showTime(){
           //$("#imagebox li.type").removeClass("vesibilityclass").addClass("unvesibilityclass");
               
           //$("#imagebox li.time").removeClass("unvesibilityclass").addClass("vesibilityclass");
@@ -104,9 +86,10 @@ $(document).ready(function()
         $("#imagebox span.type").removeClass("vesibilityclass").addClass("unvesibilityclass");
         $("#imagebox span.time").removeClass("unvesibilityclass").addClass("vesibilityclass");
 	}
-    });
+    return false;
+    };
  
-    $("#filter a").eq(1).click(function(){
+    function showType(){
           var preitems=$("#imagebox li.time").clone();
 	  if(!$("#imagebox li").is(":animated")){
           $("#imagebox li.time").each(function(index){
@@ -138,7 +121,8 @@ $(document).ready(function()
          $("#imagebox span.time").removeClass("vesibilityclass").addClass("unvesibilityclass");
          $("#imagebox span.type").removeClass("unvesibilityclass").addClass("vesibilityclass");
 	}
-        });
+    return false;
+        };
                 
     function createList(text,items){
 		
@@ -238,18 +222,72 @@ $(document).ready(function()
         else{
 		// Creating a menu item. The unordered list is added
 		// as a data parameter (available via .data('list'):
+        /*
 		var a = $('<a>',{
 			html: text,
 			href:'#',
 			data: {list:ul}
 		}).appendTo('#filter');
+        */
+        }
     }
+    function makeFilter() {
+        var tpl=$('#tpl-nav-li').html();
+        var $pageNav= $('#items li').not('.on, .more, .filter-item'),
+            $more= $('#items .more a'),
+            $filter= $(Mustache.to_html(tpl, {
+                name: "TIME"
+              , nameZh: "时间"
+              , href: "#"
+              , class: "filter-item"
+            }))
+          .add(Mustache.to_html(tpl, {
+                name: "TYPE"
+              , nameZh: "类型"
+              , href: "#"
+              , class: "filter-item"
+            }));
+        $filter.eq(0).click(showTime);
+        $filter.eq(1).click(showType);
+        $('#items').append($filter);
+        var isFilter= true;
+        $pageNav.hide();
+        console.log($more);
+        $more.click(function() {
+            if (isFilter) {
+                $filter.hide();
+                $pageNav.show();
+            } else {
+                $pageNav.hide();
+                $filter.show();
+            }
+            isFilter= !isFilter;
+            return false;
+        });
     }
+    makeFilter();
+});
 
-    })
+// 处理more相关及按钮
+$(document).ready(function() {
+    /*
+        $ele.eq(0).click(function()
+            {
+                $info.hide("slide",{direction:"left"},400);
+                $ele.eq(0).clone().appendTo("div#info");
+                $item.hide();
+                $(".project").show("slide",{direction:"left"},400);
+                $("#filter").show("slide",{direction:"left"},400);
+            });
 
-    $(document).ready(function() {
-      setTimeout(function() {
-        
-      }, 5000);
-    })
+        $("#back a").click(function()
+            {
+                $info.show("slide",{direction:"left"},400);
+                $("#info a").eq(1).remove();
+                $item.show("slide",{direction:"left"},400);
+
+                $(".project").hide(1000,"easeOutBounce");
+                $("#filter").hide(1000,"easeOutBounce");
+            });
+            */
+})

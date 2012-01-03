@@ -9,17 +9,6 @@ Description: 单页显示内容, 含上下nav
  window.$= window.jQuery;</script>
 <div id="mainbox" class="grid-m0 col-main">
   <div class="main-wrap">
-<script id="tpl-cfy-col" type="text/template" style="display:none">
-    <li class="cfy-col">
-      <div class="title">
-        {{title}}
-      </div>
-      {{#items}}
-        <a href="{{href}}" class="cfy-item"><img src="{{src}}" alt="{{alt}}"/></a>
-      {{/items}}
-    </li>
-</script>
-
   <?php if (have_posts()) : ?>
 <section id="imagebox">
     <?php the_post();
@@ -28,15 +17,16 @@ Description: 单页显示内容, 含上下nav
   <?php endif; ?>
 
 <?php if (is_home() || is_front_page()) : ?>
-<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.easing.1.3.js" ></script>
+<script src="<?php bloginfo('template_directory'); ?>/_/js/mustache.js"></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.localzoom.js" ></script>
-<!--<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>-->
-<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery-ui.min.js"></script>
+<!--<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.easing.1.3.js" ></script>
+<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery-ui.min.js"></script>-->
+<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>
 <link    href="<?php bloginfo('template_directory');?>/_/css/jquery-ui.css"  rel="stylesheet" type="text/css"/>
 <script type="text/javascript">
 var $= window.jQuery;
 $(document).ready(function() {
-  $.localzoom('#imagebox .ngg-gallery-thumbnail', {
+  $.localzoom('#imagebox .ngg-thumbnail', {
         ratio: 2.0
     });
   makeGallery({

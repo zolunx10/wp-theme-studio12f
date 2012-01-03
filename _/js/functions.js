@@ -23,7 +23,7 @@ exports.makeGallery= function(settings) {
           }
       });
   }
-  $('body').delegate('.ngg-gallery-thumbnail a.ngg-link', 'click', function() {
+  $('body').delegate('.ngg-thumbnail a.ngg-link', 'click', function() {
     var t, params={},
         href= opts.getHref ? opts.getHref(this) : this.href;
     $.fancybox.showLoading();

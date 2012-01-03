@@ -1,7 +1,8 @@
 <?php get_header(); ?>
 <style type="text/css">
-  .page-wrap {
+  .home-content {
     width:800px;
+    min-height:300px;
   }
 </style>
 <header id="header">
@@ -15,7 +16,7 @@
     </a></h1>
 </header><!-- #header -->
 
-  <div class="page-wrap clearfix">
+  <div class="home-content page-wrap clearfix">
   <!-- not needed? up to you: http://camendesign.com/code/developpeurs_sans_frontieres -->
 
 
