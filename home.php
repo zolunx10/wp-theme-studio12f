@@ -27,14 +27,25 @@ Description: 单页显示内容, 含上下nav
 </section>
   <?php endif; ?>
 
-<?php if (is_home()) : ?>
+<?php if (is_home() || is_front_page()) : ?>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.easing.1.3.js" ></script>
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery.localzoom.js" ></script>
-<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>
+<!--<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.js" ></script>-->
 <script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/jquery-ui.min.js"></script>
 <link    href="<?php bloginfo('template_directory');?>/_/css/jquery-ui.css"  rel="stylesheet" type="text/css"/>
-<script  type="text/javascript" src="<?php bloginfo('template_directory');?>/_/js/home.x.js" ></script>
+<script type="text/javascript">
+var $= window.jQuery;
+$(document).ready(function() {
+  $.localzoom('#imagebox .ngg-gallery-thumbnail', {
+        ratio: 2.0
+    });
+  makeGallery({
+    jsonUrl: "<?php echo bloginfo('url') ?>/"
+  });
+});
+</script>
 <?php endif; ?>
+
 </div>
 </div>
 <?php get_footer('public'); ?>
