@@ -17,27 +17,27 @@
     </li>  
 </script>
   <ul id="items" class="page-nav clearfix">
-    <li class="project item page_item entry-title <?php if ($is_project) {echo "on";} ?>">
+    <li class="project item page_item entry-title <?php if ($is_project) {echo "active";} ?>">
       <a href="<?php bloginfo('url'); ?>">项目<br/>
           <span class="name">PROJECTS</span>
       </a>
     </li>
-    <li class="book item page_item entry-title <?php if ($name=="book") {echo "on";} ?>">
+    <li class="book item page_item entry-title <?php if ($name=="book") {echo "active";} ?>">
       <a href="<?php bloginfo('url'); ?>/archives/category/book">著作<br/>
           <span class="name">BOOKS</span>
       </a>
     </li>
-    <li class="paper item page_item entry-title <?php if ($name=="paper") {echo "on";} ?>">
+    <li class="paper item page_item entry-title <?php if ($name=="paper") {echo "active";} ?>">
       <a href="<?php bloginfo('url'); ?>/archives/category/paper">论文<br/>
           <span class="name">PAPERS</span>
       </a>
     </li>
-    <li class="undergraduate item page_item entry-title <?php if ($name=="work") {echo "on";} ?>">
+    <li class="undergraduate item page_item entry-title <?php if ($name=="work") {echo "active";} ?>">
       <a href="<?php echo bloginfo('url') ?>/work">本科生作品<br/>
           <span class="name">UNDERGRADUATE<br/>STUDENTS' WORKS</span>
       </a>
     </li>
-    <li class="postgraduate item page_item entry-title <?php if ($name=="postgraduate") {echo "on";} ?>">
+    <li class="postgraduate item page_item entry-title <?php if ($name=="postgraduate") {echo "active";} ?>">
       <a href="#">研究生作品<br/>
          <span class="name">POSTGRADUATE<br/>STUDENTS' THESIS</span>
       </a>

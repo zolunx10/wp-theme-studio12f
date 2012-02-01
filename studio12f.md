@@ -1,3 +1,11 @@
+# 专用相册
+Instagram
+http://wordpress.org/extend/plugins/photonic/
+http://wordpress.org/extend/plugins/awesome-flickr-gallery-plugin/
+
+http://www.v2ex.com/t/389
+http://www.v2ex.com/t/23148
+
 # NextGEN Gallery
 album > gallery
 

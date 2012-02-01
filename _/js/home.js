@@ -221,7 +221,7 @@ $(document).ready(function()
         var element = $(this);
         c=c+1;
        // if(index>4){
-            element.css({'position':'absolute','bottom':12+(index%5)*72,'left':j*70+66*Math.floor(index/5),'height':'auto'});
+            element.css({'position':'absolute','bottom':12+(index%5)*72,'left':j*90+66*Math.floor(index/5),'height':'auto'});
         //}
             //else{
               //  element.css({'position':'absolute','bottom':12+index*72,'left':j*132,'height':'auto'});
@@ -242,7 +242,7 @@ $(document).ready(function()
         var tex = $('<span>',{
                 html:text
         });
-        tex.css({'position':'absolute','bottom':'0px','left':j*70+66*(Math.floor(c/5.0001)+1)/2});
+        tex.css({'position':'absolute','bottom':'0px','left':j*90+66*(Math.floor(c/5.0001)+1)/2});
         if(k==0){
             tex.removeClass("vesibilityclass").addClass("unvesibilityclass");
             tex.removeClass("time").addClass("type");
@@ -267,19 +267,19 @@ $(document).ready(function()
     }
     function makeFilter() {
         var tpl=$('#tpl-nav-li').html();
-        var $pageNav= $('#items li').not('.on, .more, .filter-item'),
+        var $pageNav= $('#items li').not('.info, .more, .filter-item'),
             $more= $('#items .more a'),
             $filter= $(Mustache.to_html(tpl, {
-                name: "TIME"
-              , nameZh: "时间"
-              , href: "#"
-              , class: "filter-item"
-            }))
+                    name: "TIME"
+                  , nameZh: "时间"
+                  , href: "#"
+                  , 'class': "filter-item"
+                }))
           .add(Mustache.to_html(tpl, {
                 name: "TYPE"
               , nameZh: "类型"
               , href: "#"
-              , class: "filter-item"
+              , 'class': "filter-item"
             }));
         $filter.eq(0).click(showTime);
         $filter.eq(1).click(showType);

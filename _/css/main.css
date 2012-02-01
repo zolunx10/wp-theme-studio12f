@@ -15,6 +15,7 @@ html {
 body {
   height: 100%;
   color:#909090;
+  background:#FAFAFA;
 }
 h1, h2 {
   font-size:bold;
@@ -164,9 +165,12 @@ body {
   width:800px;
   min-height:60px;
 }
-.home-nav .on {
+.home-nav .info {
   position:absolute;
   left:0;
+}
+.page-nav .active a {
+  color:#D00007;
 }
 /* info
  */

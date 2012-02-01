@@ -14,7 +14,7 @@ Follow variables are useable :
 ?>
 <?php if (!defined ('ABSPATH')) die ('No direct access allowed'); ?><?php if (!empty ($galleries)) : ?>
 
-<ul class="ngg-albumoverview">	
+<ul class="ngg-albumoverview ngg-row">	
 	<!-- List of galleries -->
 	<?php foreach ($galleries as $gallery) : ?>
 

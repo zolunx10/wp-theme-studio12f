@@ -97,6 +97,7 @@
 
   <!-- CSS: screen, mobile & print are all in the same file -->
   <link rel="stylesheet" href="<?php bloginfo('stylesheet_url'); ?>">
+  <link rel="stylesheet" href="<?php bloginfo('template_directory'); ?>/_/css/style.css">
   <?php 
       $name= get_query_var('name');
     if (!$name) {

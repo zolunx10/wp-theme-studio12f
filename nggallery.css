@@ -20,14 +20,9 @@ it's only a template design
 }
 
 .ngg-album {
-    padding: 5px;
     margin-bottom: 5px;
     border: 1px solid #fff;
-}
-
-.ngg-album {
 	overflow: hidden;
-	padding: 5px;
 	margin-bottom: 15px;
 }
 
@@ -42,6 +37,8 @@ it's only a template design
 
 .ngg-thumbnail {
 	max-width:180px;
+}
+.ngg-row .ngg-thumbnail {
 	float:right;
 }
 .ngg-albumcontent .wrap {
