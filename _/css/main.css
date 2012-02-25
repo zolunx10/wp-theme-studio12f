@@ -126,18 +126,17 @@ body {
 #header a:hover {
   text-decoration:none;
 }
-#header h1 {
-  font-size:16px;
-}
 #header, #header a {
   color:#666;
 }
+  #header h1 {
+    font-size:16px;
+  }
   #header img {
     float:left;
     margin-right:5px;
   }
   #header p {
-    padding-top:5px;
   }
   #header strong {
     font-size:18px;
@@ -152,10 +151,6 @@ body {
   min-height:400px;
   _height:400px;
   margin-left:100px;
-}
-#imagebox img {
-  width:50px;
-  height:50px;
 }
 
 .home-nav {
@@ -228,13 +223,18 @@ li.current_page_item a {
   margin-top:8px;
 }
 
+.category header h2 {
+  display:inline;
+}
+.category header .meta {
+  display:inline;
+  margin-left:5px;
+}
 /* book
 */
-.category-book .post {
+.category article.category-book {
   margin-left:10px;
   margin-right:10px;
-}
-.category-book .post {
   display:inline;
   float:left;
   position:relative;
@@ -243,28 +243,56 @@ li.current_page_item a {
   height:120px;
   overflow:hidden;
 }
-.category-book .cover {
+.category .category-book .cover {
   position:absolute;
   top:0; left:0;
   width:100px;
 }
-.category-book .cover img {
+.category .category-book .cover img {
   width:100%;
   height:auto;
   margin:0 5px 5px 0;
 }
-.category-book .post header {
+.category .category-book .post header {
   margin-bottom:10px;
 }
-.category-book .entry img {
+.category .category-book .entry img {
   display:none;
 }
-.category-book .entry p {
+.category .category-book .entry p {
   text-indent:0;
 }
 
+/* postgraduate
+*/
+.category .category-postgraduate {
+
+}
+/* TODO */
+.category article.category-postgraduate {
+  display:inline;
+  float:left;
+  margin:10px 20px;
+}
+
+
 /* home
 */
+#stage {
+  display: none;
+}
+#imagebox .label {
+  position: absolute;
+  height:15px;
+  bottom:0;
+  left:0;
+}
+#imagebox .label span {
+  position:absolute;
+  top:0;
+  text-align:center;
+  display:inline-block;
+}
 #imagebox li {
 
 }

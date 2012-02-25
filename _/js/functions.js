@@ -2,6 +2,9 @@
 var exports= window;
 (function($){
 var RE_URICMP=/[?&](\w+)=([^&=]*)/ig;
+/****
+ * 单击首页小图标时用fancybox显示相册
+ */
 exports.makeGallery= function(settings) {
   var opts= {
     jsonUrl: "/"
@@ -25,6 +28,7 @@ exports.makeGallery= function(settings) {
   }
   $('body').delegate('.ngg-thumbnail a.ngg-link', 'click', function() {
     var t, params={},
+        $this= $(this),
         href= opts.getHref ? opts.getHref(this) : this.href;
     $.fancybox.showLoading();
     RE_URICMP.lastIndex= 0;
@@ -35,14 +39,20 @@ exports.makeGallery= function(settings) {
     if (galleryCache[gid]) {
       openFancy(galleryCache[gid]);
     } else {
-      $.getJSON(opts.jsonUrl+"?callback=json&format=json&method=gallery&id="+gid, function(json) {
+      $.getJSON(opts.jsonUrl+"?callback=json&format=json&method=gallery&api_key=studio12F&id="+gid, function(json) {
+          if (! json.images) {
+            $.fancybox.hideLoading();
+            return false;
+          }
           var imgs= json.images,
               objs=[];
+          var title= $this.attr('title');
           for (var i=0, ii=imgs.length; i<ii; i++) {
             objs.push({
-                href: imgs[i].imageURL
-              , src: imgs[i].thumbURL
-              , title: imgs[i].description
+              href: imgs[i].imageURL,
+              src: imgs[i].thumbURL,
+              title: title
+              //, title: imgs[i].description
             });
           }
           galleryCache[gid]= objs;

@@ -26,9 +26,11 @@ Description: 单页显示内容, 含上下nav
 <script type="text/javascript">
 var $= window.jQuery;
 $(document).ready(function() {
+  
   $.localzoom('#imagebox .ngg-thumbnail', {
         ratio: 2.0
     });
+  //*/
   makeGallery({
     jsonUrl: "<?php echo bloginfo('url') ?>/"
   });

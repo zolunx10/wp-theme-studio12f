@@ -1,24 +1,39 @@
+<?php
+/*
+Template Name: Blog
+Destription: 左侧显示父级树状图
+*/
+?>
+<?php get_header(); ?>
 
-<?php get_header('public'); ?>
-
-	<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
-			
-		<article class="post" id="post-<?php the_ID(); ?>">
-
-			<div class="entry">
-
-				<?php the_content(); ?>
-
-				<?php wp_link_pages(array('before' => 'Pages: ', 'next_or_number' => 'number')); ?>
-
-			</div>
-
-			<?php edit_post_link('编辑', '<p>', '</p>'); ?>
-
-		</article>
-		
-		<?php //comments_template(); ?>
-
-		<?php endwhile; endif; ?>
-
+<div class="page-wrap content grid-s4m0 clearfix">
+  <div class="col-main">
+  <div class="main-wrap post">
+<?php if (have_posts()) : while (have_posts()) : the_post(); ?>
+    <article <?php post_class("clearfix") ?>>
+      <header>
+      <?php if (is_single()) { ?>
+        <h1 class="entry-title" id="post-<?php the_ID(); ?>"><?php the_title();?></h1>
+        <?php } else { ?>
+        <h2 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+        <?php } ?>
+        <div class="meta"><?php include (TEMPLATEPATH . '/_/inc/meta.php' ); ?></div>
+      </header>
+      <div class="entry">
+        <?php 
+          //add_filter('the_content', 'wpautop'); //the_content()会自动将空换行替换为<p>,  get_the_content()则不会
+          the_content(); 
+        ?>
+      </div>
+    </article>
+  <?php endwhile; 
+    include (TEMPLATEPATH. '/_/inc/nav.php');
+    ?>
+<?php endif; ?>
+  </div>
+  </div>
+  <div class="col-sub">
+  <?php get_sidebar(); ?>
+  </div>
+</div>
 <?php get_footer(); ?>

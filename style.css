@@ -124,11 +124,11 @@ a img {
 
 
 .vesibilityclass{
-    opacity:1;
+  display:block;
 }
 
 .unvesibilityclass{
-    opacity:0;
+  display:none;
 }
 
 #imagebox li{

@@ -33,12 +33,12 @@
       </a>
     </li>
     <li class="undergraduate item page_item entry-title <?php if ($name=="work") {echo "active";} ?>">
-      <a href="<?php echo bloginfo('url') ?>/work">本科生作品<br/>
+      <a href="<?php echo bloginfo('url') ?>/archives/category/undergraduate">本科生作品<br/>
           <span class="name">UNDERGRADUATE<br/>STUDENTS' WORKS</span>
       </a>
     </li>
     <li class="postgraduate item page_item entry-title <?php if ($name=="postgraduate") {echo "active";} ?>">
-      <a href="#">研究生作品<br/>
+      <a href="<?php echo bloginfo('url') ?>/archives/category/postgraduate">研究生作品<br/>
          <span class="name">POSTGRADUATE<br/>STUDENTS' THESIS</span>
       </a>
     </li>
@@ -56,6 +56,12 @@
     <li id="back" class="more page_item entry-title">
       <a href="<?php bloginfo('url') ?>">更多<br/>
           <span class="name">MORE</span>
+      </a> 
+    </li>
+    <?php } else if (is_single()) { ?>
+    <li id="back" class="more page_item entry-title">
+      <a href="javascript:history.back();">返回<br/>
+          <span class="name">BACK</span>
       </a> 
     </li>
     <?php } else { ?>

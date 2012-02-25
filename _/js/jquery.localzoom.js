@@ -27,6 +27,7 @@
       , speed: 200
       , border: 0
       , topMin: 120
+      , show: function() {}
     };
     if (settings) {
       $.extend(opts, settings);
@@ -36,7 +37,7 @@
       reset();
     }
     $el= $this.clone().css({
-      position: "static"
+      position: "relative"
     });
     var sc= {
       top: $this.offset().top
@@ -44,40 +45,48 @@
     , width: $this.width()
     , height: $this.height()
     };
-    $viewer.hide().empty().append($el).css($.extend(sc, {
+    $viewer.hide().empty().append($el).css({
           "-moz-box-shadow": "0px 0px 12px black"
           ,"-webkit-box-shadow": "0px 0px 12px black"
-    })).show();
+          ,'top': sc.top
+          ,'left': sc.left
+    }).show();
 
     sc.top+=sc.height*(1-opts.ratio)/2, 
     sc.left+=sc.width*(1-opts.ratio)/2, 
     sc.width*=opts.ratio,
     sc.height*=opts.ratio;
-    $viewer.stop().animate(sc, opts.speed);
-    $('img', $el).each(function(){
-      var t= {
-          width: Math.round( $(this).width()*opts.ratio)
-        , height: Math.round( $(this).height()*opts.ratio )
-      };
-      if (t.width==0 || t.height==0) {
-        //TODO
-        t.width=sc.width*0.85;
-        t.height=sc.height*0.85;
-      }
-      $(this).animate({
-        width: t.width
-      , height: t.height
+    $viewer.stop().animate({
+      top: sc.top
+      ,left: sc.left
+      }, opts.speed, opts.show);
+    $el.animate({
+        width:sc.width
+      , height: sc.height
+    }, opts.speed);
+    // handle img in el (only the first one)
+    var $img= $('img', $el).eq(0),
+        imgSc= {
+          width: $img.width()
+        , height: $img.height()
+        };
+    $('img', $viewer).eq(0).css(imgSc).stop()
+      .animate({
+        width: imgSc.width*opts.ratio
+      , height: imgSc.height*opts.ratio
       }, opts.speed);
-    });
   };
   $.localzoom= function(selector, settings) {
+    var opts= $.extend({
+      delay: 200
+    }, settings);
     var tmr;
     $('body').delegate(selector, 'mouseenter', function() {
       clearTimeout(tmr);  tmr= null;
       var el= this;
       tmr =setTimeout(function() {
-        $(el).localzoom(settings);
-      }, settings.delay ||200);
+        $(el).localzoom(opts);
+      }, opts.delay);
     }).delegate(selector, 'mouseleave', function() {
       clearTimeout(tmr);
     })
