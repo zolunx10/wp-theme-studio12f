@@ -11,6 +11,7 @@ Destription: 左侧显示父级树状图
   <div class="main-wrap post">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
     <article <?php post_class("clearfix") ?>>
+<?php /*
       <header>
       <?php if (is_single()) { ?>
         <h1 class="entry-title" id="post-<?php the_ID(); ?>"><?php the_title();?></h1>
@@ -19,6 +20,7 @@ Destription: 左侧显示父级树状图
         <?php } ?>
         <div class="meta"><?php include (TEMPLATEPATH . '/_/inc/meta.php' ); ?></div>
       </header>
+*/ ?>
       <div class="entry">
         <?php 
           //add_filter('the_content', 'wpautop'); //the_content()会自动将空换行替换为<p>,  get_the_content()则不会

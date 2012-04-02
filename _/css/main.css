@@ -39,6 +39,20 @@ a:hover {
 .unused .post p {
   text-indent:2em;
 }
+.aligncenter,
+dl.aligncenter {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.alignleft {
+  float: left;
+}
+
+.alignright {
+  float: right;
+}
 
 body {
   _text-align:center;
@@ -134,17 +148,18 @@ body {
   }
   #header img {
     float:left;
-    margin-right:5px;
-  }
-  #header p {
-  }
-  #header strong {
-    font-size:18px;
-    line-height:1em;
+    margin-top: 6px;
+    margin-right:8px;
   }
   #header small {
     font-size:12px;
+    font-weight:normal;
     -webkit-text-size-adjust:none;
+  }
+  #header div {
+    line-height:1.1em;
+    font-weight:bold;
+    font-size:18px;
   }
 
 .home #imagebox {
@@ -182,6 +197,7 @@ body {
 }
 .page-nav .name{
   -webkit-text-size-adjust:none;
+  line-height:1.6;
   font-size:9px;
   font-weight:normal;
 }

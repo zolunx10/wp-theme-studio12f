@@ -128,7 +128,7 @@ $(document).ready(function(){
         var $pageNav= $('#items li').not('.info, .more, .filter-item'),
             $more= $('#items .more a'),
             $filter= $(Mustache.to_html(tpl, {
-                    name: "TIME"
+                    name: "CHRONOLOGY"
                   , nameZh: "时间"
                   , href: "#"
                   , 'class': "filter-item"
