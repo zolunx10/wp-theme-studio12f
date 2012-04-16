@@ -1,1 +1,1 @@
-<?php include (TEMPLATEPATH . '/page.php' ); ?>
+<?php include (TEMPLATEPATH . '/category.php' ); ?>

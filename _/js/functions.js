@@ -65,7 +65,6 @@ exports.makeGallery= function(settings) {
 
 
 /* trigger when page is ready */
-
 $(document).ready(function(){
   //左右键翻页
   if ($('.navigation').length>0) {

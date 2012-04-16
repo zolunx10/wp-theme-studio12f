@@ -9,7 +9,7 @@
 if (have_posts()) : 
   while (have_posts()) : the_post(); 
     $content= get_the_content();
-    if ($name==="book" || $name==="postgraduate") {
+    if ($name==="book") {
       // 著作, 提取img作为封面
       $RE_SRC= '/<img[^>]*src="?([^ ">]*)"?[ >]/i';
       preg_match($RE_SRC, $content, $t);
@@ -29,22 +29,15 @@ if (have_posts()) :
     }
     
 ?>
-    <article <?php post_class("clearfix") ?>>
     <?php if ($name==="book") { ?>
+    <article <?php post_class("clearfix") ?>>
       <div class="cover">
         <img src="<?php echo $t?$t[1]:'' ?>" width="100" alt="" />
       </div>
-    <?php } ?>
       <header>
-        <h2 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
-        <?php  if ($name==="postgraduate") { ?>
-          <div class="photo">
-            <img src="<?php echo $t?$t[1]:'' ?>" width="100" alt="" />
-          </div>
-        <?php   $content= "";
-          } ?>
+        <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
           <?php the_title();?>
-        </a></h2>
+        </a></h3>
         <div class="meta">
           <?php edit_post_link(__("编辑", 'tbdata'), '<span class="edit-link">', '</span>') ?>
         </div>
@@ -52,6 +45,17 @@ if (have_posts()) :
       <div class="entry">
         <?php echo apply_filters('the_content', $content); ?>
       </div>
+    <?php } else { ?>
+    <article <?php post_class("li clearfix") ?>>
+        <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
+          <?php the_title();?>
+        </a></h3>
+        <div class="meta">
+          <?php edit_post_link(__("编辑", 'tbdata'), '<span class="edit-link">', '</span>') ?>
+          <span class="comment-count" style="color:#333;">(<?php echo get_comments_number(); ?>)</span>
+          <span><?php the_time("Y-m-d h:i") ?></span>
+        </div>
+    <?php } ?>
     </article>
   <?php endwhile; 
     include (TEMPLATEPATH. '/_/inc/nav.php');

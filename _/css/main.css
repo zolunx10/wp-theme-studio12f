@@ -30,8 +30,8 @@ a:hover {
   color:#CE1719;
   text-decoration:underline;
 }
-.entry-title, .entry-title a{font-family:"Microsoft YaHei", Helmet, Freesans, sans-serif;
-}
+.entry-title, .entry-title a{font-family:"Microsoft YaHei", Helmet, Freesans, sans-serif; }
+
 .post p {
   margin-bottom:5px;
   line-height:1.4em;
@@ -81,9 +81,26 @@ body {
 }
 .post {
   margin-bottom:20px;
+  padding:5px 0;
 }
 .page-wrap {
   margin-top:20px;
+}
+.page-wrap {
+  width:945px;
+}
+.home-content .page-wrap {
+  width:700px;
+}
+.home .page-wrap {
+  margin-top:0;
+}
+.home-content {
+  overflow-y:auto;
+  min-height:400px;
+}
+.home-content .li {
+  border-bottom:1px dashed #F0F0F0;
 }
 .navigation {
   clear:both;
@@ -132,7 +149,7 @@ body {
 /* header
 */
 .home #header {
-  padding-top:80px;
+  padding-top:40px;
 }
 #header {
   padding-top:20px;
@@ -231,6 +248,9 @@ li.current_page_item a {
 .post h2 {
   font-size:20px;
 }
+.post h3 {
+  font-size:16px;
+}
 .post header {
   color:#333;
   margin-bottom:10px;
@@ -239,11 +259,12 @@ li.current_page_item a {
   margin-top:8px;
 }
 
-.category header h2 {
+.category h3.entry-title {
   display:inline;
 }
-.category header .meta {
+.category .meta {
   display:inline;
+  float:right;
   margin-left:5px;
 }
 /* book
@@ -281,16 +302,9 @@ li.current_page_item a {
 
 /* postgraduate
 */
-.category .category-postgraduate {
-
-}
-/* TODO */
 .category article.category-postgraduate {
-  display:inline;
-  float:left;
-  margin:10px 20px;
-}
 
+}
 
 /* home
 */

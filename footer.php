@@ -2,7 +2,7 @@
 
 	</div>
 		<footer id="footer" class="source-org vcard copyright">
-      <p>
+      <p style="display:none;">
         <a href="<?php bloginfo('url'); ?>">首页</a>
         <span class="sep"> | </span> 
         <a href="<?php bloginfo('url'); ?>/archives/category/blog">博客</a>

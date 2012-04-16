@@ -7,7 +7,8 @@ Description: 单页显示内容, 含上下nav
 <?php get_header('public'); ?>
 <script type="text/javascript">
  window.$= window.jQuery;</script>
-<div id="mainbox" class="grid-m0 col-main">
+<div class="content page-wrap grid-m0 clearfix">
+<div id="mainbox" class="col-main">
   <div class="main-wrap">
   <?php if (have_posts()) : ?>
 <section id="imagebox">
@@ -38,6 +39,7 @@ $(document).ready(function() {
 </script>
 <?php endif; ?>
 
+</div>
 </div>
 </div>
 <?php get_footer('public'); ?>

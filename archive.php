@@ -1,7 +1,3 @@
 <?php 
-  if (in_category('blog')) {
-    include (TEMPLATEPATH . '/single.php' ); 
-  } else {
-    include (TEMPLATEPATH . '/category.php'); 
-  }
+//有category.php的情况下会被覆盖
 ?>
