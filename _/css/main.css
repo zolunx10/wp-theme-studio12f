@@ -58,7 +58,6 @@ body {
   _text-align:center;
 }
 .page-wrap, #header,  #footer, .home-nav {
-  position:relative;
   width:960px;
   margin:0 auto;
   _text-align:left;
@@ -80,17 +79,14 @@ body {
     height: 5px;
 }
 .post {
-  margin-bottom:20px;
+  margin-bottom:10px;
   padding:5px 0;
-}
-.page-wrap {
-  margin-top:20px;
 }
 .page-wrap {
   width:945px;
 }
 .home-content .page-wrap {
-  width:700px;
+  width:750px;
 }
 .home .page-wrap {
   margin-top:0;
@@ -98,6 +94,7 @@ body {
 .home-content {
   overflow-y:auto;
   min-height:400px;
+  position:relative;
 }
 .home-content .li {
   border-bottom:1px dashed #F0F0F0;
@@ -153,6 +150,7 @@ body {
 }
 #header {
   padding-top:20px;
+  margin-bottom:10px;
 }
 #header a:hover {
   text-decoration:none;
@@ -180,9 +178,10 @@ body {
   }
 
 .home #imagebox {
+  position:relative;
   min-height:400px;
   _height:400px;
-  margin-left:100px;
+  margin-left:40px;
 }
 
 .home-nav {
@@ -261,6 +260,7 @@ li.current_page_item a {
 
 .category h3.entry-title {
   display:inline;
+  float:left;
 }
 .category .meta {
   display:inline;
@@ -276,7 +276,7 @@ li.current_page_item a {
   float:left;
   position:relative;
   padding-left:110px;
-  width:270px;
+  width:220px;
   height:120px;
   overflow:hidden;
 }
@@ -326,3 +326,7 @@ li.current_page_item a {
 #imagebox li {
 
 }
+
+
+/* test
+*/

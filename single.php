@@ -1,6 +1,6 @@
 <?php if (have_posts()) {
   $post = $wp_query->post;
-  if (in_category('blog')) {
+  if (in_category('__blog')) {
     include (TEMPLATEPATH . '/page.php' ); 
   } else {
     $name= get_query_var('category_name');
