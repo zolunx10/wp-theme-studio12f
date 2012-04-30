@@ -6,7 +6,7 @@ Destription: 左侧显示父级树状图
 ?>
 <?php get_header(); ?>
 
-<div class="page-wrap content grid-s4m0 clearfix">
+<div class="page-wrap content grid-s4m0 page-content clearfix">
   <div class="col-main">
   <div class="main-wrap post">
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>

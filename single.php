@@ -26,7 +26,7 @@ if (have_posts()) :
         <?php the_content(); ?>
       </div>
     </article>
-    <?php //comments_template(); ?>
+    <?php comments_template(); ?>
   <?php endwhile; 
     // include (TEMPLATEPATH. '/_/inc/nav.php');
     ?>

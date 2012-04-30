@@ -8,7 +8,8 @@
         <a href="<?php bloginfo('url'); ?>/archives/category/blog">博客</a>
       </p>
       <p>
-      <small>&copy; <?php echo date("Y "); bloginfo('name'); ?></small>
+      <small><a href="<?php bloginfo('url'); ?>/wp-admin">Admin</a>
+        | &copy; <?php echo date("Y "); bloginfo('name'); ?></small>
       </p>
 		</footer>
 

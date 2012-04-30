@@ -68,10 +68,15 @@ $(document).ready(function(){
         height: 72
     };
     var TYPE_NAME= {
+        "urban": "城市设计",
+        "arch": "建筑设计",
+        "village": "乡村规划",
+        "other": "其他"
+        /*
         "urban": "Urban Design",
         "arch": "Architecture Design",
         "village": "Village Planning",
-        "other": "Other"
+        "other": "Other"*/
     };
     $.each(tagList, function(className, tags) {
         // className为time或type

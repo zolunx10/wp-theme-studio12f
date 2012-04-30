@@ -195,8 +195,8 @@ ol.commentlist li.comment ul.children li.depth-3 {border-left: 5px solid #999; m
 ol.commentlist li.comment ul.children li.depth-4 {border-left: 5px solid #bbb; margin: 0 0 10px 10px;}
 ol.commentlist li.comment ul.children li.depth-5 {}
 ol.commentlist li.comment ul.children li.odd {}
-ol.commentlist li.even {background: #fff;}
-ol.commentlist li.odd {background: #f6f6f6;}
+ol.commentlist li.even {}
+ol.commentlist li.odd {}
 ol.commentlist li.parent {border-left: 5px solid #111;}
 ol.commentlist li.thread-alt {}
 ol.commentlist li.thread-even {}

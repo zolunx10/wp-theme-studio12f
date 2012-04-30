@@ -1,5 +1,5 @@
     <nav class="page-nav">
-      <h1 class="entry-title">
+      <h1 class="entry-title page_item">
         <?php 
           $t= get_page_by_path('info'); 
           if (is_page()) {
@@ -26,15 +26,11 @@
             'link_before'=>'<h2 class="entry-title">',
             'link_after'=>'</h2>'
           ));
-          if (is_page()) {
-            ?>
-        <li class="page_item page-item-<?php ?>">
-          <a href="<?php echo bloginfo('url'); ?>/archives/category/blog">
-            <h2 class="entry-title">
-              博客 <span class="name">BLOG</span>
-            </h2>
-          </a>
-        </li>
-          <?php } ?>
+          ?>
+        <li id="back" class="back page_item entry-title">
+        <a href="<?php bloginfo('url') ?>">返回首页
+          <span class="name">HOME</span>
+      </a> 
+    </li>
       </ul>
     </nav>

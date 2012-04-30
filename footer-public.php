@@ -16,7 +16,7 @@
       </a>
     </li>  
 </script>
-  <ul id="items" class="page-nav clearfix">
+  <ul id="items" class="clearfix">
     <li class="project item page_item entry-title <?php if ($is_project) {echo "active";} ?>">
       <a href="<?php bloginfo('url'); ?>">项目<br/>
           <span class="name">PROJECTS</span>
@@ -42,8 +42,8 @@
          <span class="name">POSTGRADUATE<br/>STUDENTS' THESIS</span>
       </a>
     </li>
-    <li class="blog item page_item entry-title">
-      <a href="<?php bloginfo('url'); ?>/archives/category/blog">影像<br/>
+    <li class="blog item page_item entry-title <?php if ($name=="blog") {echo "active";} ?>">
+      <a href="<?php bloginfo('url'); ?>/archives/category/blog">博客<br/>
           <span class="name">BLOG</span>
       </a>
     </li>

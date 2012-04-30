@@ -4,14 +4,16 @@
 ?>
 <div class="content page-wrap grid-m0 clearfix">
   <div class="col-main">
-  <div class="main-wrap clearfix" id="post-<?php the_ID(); ?>">
+  <ul class="main-wrap clearfix" id="post-<?php the_ID(); ?>">
 <?php 
 if (have_posts()) : 
+  $link= null;  $isAlt= true;
   while (have_posts()) : the_post(); 
+    $isAlt= !$isAlt;
     $content= get_the_content();
-    if ($name==="book") {
+    if ($name==="book" || $name=="postgraduate") {
       // 著作, 提取img作为封面
-      $RE_SRC= '/<img[^>]*src="?([^ ">]*)"?[ >]/i';
+      $RE_SRC= '/<img[^>]*src="?([^ ">]*)"?[^>]*>/i';
       preg_match($RE_SRC, $content, $t);
       //$content= str_replace($t[0], "", $content);
     }
@@ -29,39 +31,41 @@ if (have_posts()) :
     }
     
 ?>
-    <?php if ($name==="book") { ?>
-    <article <?php post_class("clearfix") ?>>
-      <div class="cover">
-        <img src="<?php echo $t?$t[1]:'' ?>" width="100" alt="" />
-      </div>
-      <header>
-        <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
-          <?php the_title();?>
-        </a></h3>
-        <div class="meta">
-          <?php edit_post_link(__("编辑", 'tbdata'), '<span class="edit-link">', '</span>') ?>
+    <?php if ($name==="book"|| $name=="postgraduate") { ?>
+    <li class="col <?php if ($isAlt) echo "alt"; ?>">
+      <article <?php post_class("clearfix") ?>>
+        <div class="cover">
+          <a href="<?php echo $link ?>"><img src="<?php echo $t?$t[1]:'' ?>" width="100" alt="" /></a>
         </div>
-      </header>
-      <div class="entry">
-        <?php echo apply_filters('the_content', $content); ?>
-      </div>
+        <header class="clearfix">
+          <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
+            <?php the_title();?>
+          </a></h3>
+          <div class="meta">
+            <?php edit_post_link(__("编辑", 'tbdata'), '<span class="edit-link">', '</span>') ?>
+          </div>
+        </header>
+        <div class="entry">
+          <?php echo apply_filters('the_content', $content); ?>
+        </div>
+      </article>
     <?php } else { ?>
-    <article <?php post_class("li clearfix") ?>>
+    <li <?php post_class("li clearfix") ?>>
         <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
           <?php the_title();?>
         </a></h3>
         <div class="meta">
           <?php edit_post_link(__("编辑", 'tbdata'), '<span class="edit-link">', '</span>') ?>
-          <span class="comment-count" style="color:#333;">(<?php echo get_comments_number(); ?>)</span>
-          <span><?php the_time("Y-m-d h:i") ?></span>
+          <span class="comment-count" style="color:#333;">(<?php echo get_comments_number(); ?>/<?php if(function_exists('the_views')) { the_views(); } ?>)</span>
+          <time datetime="<?php echo the_time(DATE_W3C); ?>" pubdate class="updated"><?php the_time("Y-m-d h:i") ?></time>
         </div>
     <?php } ?>
-    </article>
+    </li>
   <?php endwhile; 
     include (TEMPLATEPATH. '/_/inc/nav.php');
     ?>
 <?php endif; ?>
-  </div>
+  </ul>
   </div>
 </div>
 <?php
