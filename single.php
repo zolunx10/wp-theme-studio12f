@@ -34,6 +34,12 @@ if (have_posts()) :
   </div>
   </div>
 </div>
+<script type="text/javascript">
+var $= window.jQuery;
+  $(document).ready(function() {
+    allFancy();
+  });
+</script>
   <?php
       get_footer('public');
   }

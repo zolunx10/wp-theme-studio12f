@@ -76,11 +76,9 @@
 <script type="text/javascript">
   //满屏高度
 (function($) {
-  $(document).ready(function() {
     var h=document.body.clientHeight-$('div.home-nav').outerHeight()-$('#header').outerHeight()-$('#footer').outerHeight()-110;
     if (h<400) h=400;
     $('div.home-content').height(h);
-  });
 })(jQuery);
 </script>
 <?php get_footer(); ?>

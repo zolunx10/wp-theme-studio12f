@@ -26,8 +26,10 @@ if (have_posts()) :
     }
     if ($link) {
       $link= $link[1];
+      $isBlank= true;
     } else {
       $link= get_permalink();
+      $isBlank= false;
     }
     
 ?>
@@ -38,7 +40,7 @@ if (have_posts()) :
           <a href="<?php echo $link ?>"><img src="<?php echo $t?$t[1]:'' ?>" width="100" alt="" /></a>
         </div>
         <header class="clearfix">
-          <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
+          <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>" <?php if($isBlank) echo(' target="_blank"');?>>
             <?php the_title();?>
           </a></h3>
           <div class="meta">
@@ -51,7 +53,7 @@ if (have_posts()) :
       </article>
     <?php } else { ?>
     <li <?php post_class("li clearfix") ?>>
-        <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>">
+        <h3 class="entry-title" id="post-<?php the_ID(); ?>"><a href="<?php echo $link ?>" <?php if($isBlank) echo(' target="_blank"');?>>
           <?php the_title();?>
         </a></h3>
         <div class="meta">

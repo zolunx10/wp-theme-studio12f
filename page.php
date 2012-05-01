@@ -38,4 +38,10 @@ Destription: 左侧显示父级树状图
   <?php get_sidebar(); ?>
   </div>
 </div>
+<script type="text/javascript">
+var $= window.jQuery;
+  $(document).ready(function() {
+    allFancy();
+  });
+</script>
 <?php get_footer(); ?>

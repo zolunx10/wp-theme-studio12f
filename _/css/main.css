@@ -214,24 +214,23 @@ body {
   }
   .logo img {
     float:left;
-    margin-top:4px;
+    margin-top:2px;
     margin-right:5px;
   }
   .logo small {
-    font-size:10px;
+    font-size:11px;
     font-weight:normal;
     -webkit-text-size-adjust:none;
   }
-  .logo div {
-    line-height:1.1em;
+  .logo {
+    line-height:1.1;
     font-weight:bold;
     font-size:14px;
   }
 
 .home #imagebox {
   position:relative;
-  min-height:400px;
-  _height:400px;
+  height:400px;
   margin-left:40px;
 }
 

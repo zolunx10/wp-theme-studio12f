@@ -3,7 +3,7 @@ var exports= window;
 (function($){
 var RE_URICMP=/[?&](\w+)=([^&=]*)/ig;
 /****
- * 单击首页小图标时用fancybox显示相册
+ * 首页 单击小图标时用fancybox显示相册
  */
 exports.makeGallery= function(settings) {
   var opts= {
@@ -63,6 +63,42 @@ exports.makeGallery= function(settings) {
   });
 }
 
+/****
+ * single & page 点击缩略图时使用fancybox
+ */
+exports.allFancy= function() {
+  $('.post').each(function() {
+    var $img= $('a', this).filter(function(index) {
+      if (this.innerHTML.indexOf('<img')<0) {
+        return false;
+      } else {
+        if (/flickr-mgr/.test(this.rel)) {    //是flickr图片
+          if (typeof GetFlickrHref=="function") {
+            this.href= GetFlickrHref(this);
+            return true;
+          } else {
+            this.target= "_blank";
+            return false;
+          }
+        }
+      }
+      return true;
+    });
+    $img.selector= null;  //防止fancybox使用delegate
+    $img.fancybox({
+      nextClick: true,
+      arrows: true,
+      nextEffect: 'fade',
+      prevEffect: 'fade',
+      helpers: {
+        thumbs: {
+          width: 50,
+          height: 50
+        }
+      }
+    });
+  });
+}
 
 /* trigger when page is ready */
 $(document).ready(function(){

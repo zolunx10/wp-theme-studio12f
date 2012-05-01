@@ -1,6 +1,8 @@
 $(document).ready(function(){
     $("#filter").hide();
     $("#stage").hide();
+    var $b= $("#imagebox");
+    $b.css("margin-top", ($('div.home-content').height()-$b.height())*0.4 +"px");
     var $nav = $(".home-nav .item");
     var $ele = $("a", $nav);
     var $info = $("#info a");
