@@ -120,7 +120,7 @@
   <link rel="alternate" type="application/atom+xml" title="Atom 0.3" href="<?php bloginfo('atom_url'); ?>" />
   <?php //if ( is_singular() ) wp_enqueue_script( 'comment-reply' ); ?>
   <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/_/css/jquery.fancybox.css" media="all">
-  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/_/css/jquery.fancybox-thumbs.css" media="all">
+  <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/_/css/helpers/jquery.fancybox-thumbs.css" media="all">
   <script src="<?php bloginfo('template_directory'); ?>/_/js/jquery.fancybox.pack.js"></script>
   <script src="<?php bloginfo('template_directory'); ?>/_/js/jquery.fancybox-thumbs.js"></script>
 </head>

@@ -16,14 +16,14 @@ Follow variables are useable :
 
 <div class="ngg-galleryoverview" id="<?php echo $gallery->anchor ?>">
 
-<?php if ($gallery->show_slideshow) { /*?>
+<?php if ($gallery->show_slideshow) { ?>
 	<!-- Slideshow link -->
 	<div class="slideshowlink">
 		<a class="slideshowlink" href="<?php echo $gallery->slideshow_link ?>">
 			<?php echo $gallery->slideshow_link_text ?>
 		</a>
 	</div>
-<?php */ } ?>
+<?php } ?>
 
 <?php if ($gallery->show_piclens) { ?>
 	<!-- Piclense link -->
@@ -33,17 +33,19 @@ Follow variables are useable :
 		</a>
 	</div>
 <?php } ?>
-	
+	<?php print_r($images[0]) ?>
 	<!-- Thumbnails -->
 	<?php foreach ( $images as $image ) : ?>
 	
-		<div id="ngg-image-<?php echo $image->pid ?>" class="ngg-gallery-thumbnail" <?php echo $image->style ?> >
-			<a href="<?php echo $image->imageURL ?>" title="<?php echo $image->title ?>" rel="<?php echo $gallery->anchor ?>" <?php echo $image->thumbcode ?> >
+	<div id="ngg-image-<?php echo $image->pid ?>" class="ngg-gallery-thumbnail-box" <?php echo $image->style ?> class="highslide" onclick="return hs.expand(this, { slideshowGroup: %GALLERY_NAME% })" >
+		<div class="ngg-gallery-thumbnail" >
+			<a href="<?php echo $image->imageURL ?>" title="<?php echo $image->description ?>" <?php echo $image->thumbcode ?> >
 				<?php if ( !$image->hidden ) { ?>
 				<img title="<?php echo $image->alttext ?>" alt="<?php echo $image->alttext ?>" src="<?php echo $image->thumbnailURL ?>" <?php echo $image->size ?> />
 				<?php } ?>
 			</a>
 		</div>
+	</div>
 	
 	<?php if ( $image->hidden ) continue; ?>
 	<?php if ( $gallery->columns > 0 && ++$i % $gallery->columns == 0 ) { ?>

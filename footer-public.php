@@ -38,7 +38,7 @@
       </a>
     </li>
     <li class="postgraduate item page_item entry-title <?php if ($name=="postgraduate") {echo "active";} ?>">
-      <a href="<?php echo bloginfo('url') ?>/archives/category/postgraduate">研究生作品<br/>
+      <a href="<?php echo bloginfo('url') ?>/archives/category/postgraduate">研究生论文<br/>
          <span class="name">POSTGRADUATE<br/>STUDENTS' THESIS</span>
       </a>
     </li>
@@ -77,7 +77,7 @@
   //满屏高度
 (function($) {
     var h=document.body.clientHeight-$('div.home-nav').outerHeight()-$('#header').outerHeight()-$('#footer').outerHeight()-110;
-    if (h<400) h=400;
+    if (h<410) h=410;
     $('div.home-content').height(h);
 })(jQuery);
 </script>

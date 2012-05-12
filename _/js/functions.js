@@ -69,7 +69,7 @@ exports.makeGallery= function(settings) {
 exports.allFancy= function() {
   $('.post').each(function() {
     var $img= $('a', this).filter(function(index) {
-      if (this.innerHTML.indexOf('<img')<0) {
+      if (! /<img/i.test(this.innerHTML)) {
         return false;
       } else {
         if (/flickr-mgr/.test(this.rel)) {    //是flickr图片

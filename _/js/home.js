@@ -25,7 +25,7 @@ $(document).ready(function(){
     // step 1. 统计每个tag对应的图片
     $items.each(function(index) {
         var $this=$(this),
-            tags= $this.data('tags').split(',');
+            tags= $this.data('tags').replace(/，/, ',').split(',');
         // 只考虑time, type
         for (var ii=tags.length, i=Math.floor(ii/2); i<ii; i++) {
             var v=$.trim(tags[i]),
@@ -167,7 +167,8 @@ $(document).ready(function(){
             }
             isFilter= !isFilter;
             return false;
-        });
+        })
+        .click();
     }
     makeFilter();
 });
